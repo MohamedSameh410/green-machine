@@ -3,6 +3,8 @@ name: Daily Auto Commit
 on:
   schedule:
     - cron: '0 0  * * *'
+    - cron: '0 8  * * *'
+    - cron: '0 16 * * *'
 
   workflow_dispatch:
     inputs:
@@ -32,25 +34,30 @@ jobs:
 
       - name: Write dynamic log entry
         run: |
+          # one date call captures everything
           read YEAR MONTH DATE TIME DAY WEEK \
             <<< $(date -u '+%Y %m %Y-%m-%d %H:%M:%S %A %V')
 
           LOG_FILE="logs/$YEAR-$MONTH.log"
           mkdir -p logs
 
+          # append log entry
           printf '[%s %s UTC] | run=${{ github.run_number }} | trigger=${{ github.event_name }} | week=%s | day=%s\n' \
             "$DATE" "$TIME" "$WEEK" "$DAY" >> "$LOG_FILE"
 
+          # update summary
           printf '# Activity Status\n\n| Field | Value |\n|---|---|\n| Last run | %s %s UTC |\n| Day | %s |\n| Week | %s |\n| Run # | ${{ github.run_number }} |\n| Trigger | ${{ github.event_name }} |\n| Log file | %s |\n' \
             "$DATE" "$TIME" "$DAY" "$WEEK" "$LOG_FILE" > STATUS.md
 
+          # rotate: keep last 500 lines
           tail -500 "$LOG_FILE" > "$LOG_FILE.tmp" && mv "$LOG_FILE.tmp" "$LOG_FILE"
 
       - name: Commit and push
         run: |
           git add .
+          # Exit cleanly if nothing changed (idempotent)
           git diff --cached --quiet && echo "Nothing to commit — skipping." && exit 0
           DATE=$(date -u '+%Y-%m-%d')
           TIME=$(date -u '+%H:%M')
-          git commit -m "chore: activity log $DATE $TIME UTC"
+          git commit -m "chore: activity log $DATE $TIME UTC [skip ci]"
           git push
