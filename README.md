@@ -147,22 +147,6 @@ If it's green, you're set. The bot will take it from here.
 
 ---
 
-## ❓ FAQ
-
-**Will this work on a private repo?**
-Yes. GitHub Actions runs on both public and private repos. Free accounts get 2,000 minutes/month — this workflow uses about 30 minutes/month total.
-
-**What if I miss a day?**
-GitHub occasionally delays or skips scheduled workflows during high-traffic periods. If you notice a gap, go to the Actions tab and trigger it manually.
-
-**Will this affect my real commits?**
-Not at all. These are separate commits made by `github-actions[bot]` and they show up in your contribution graph just like any other commit.
-
-**Is this against GitHub's Terms of Service?**
-Automated commits are explicitly allowed as long as you're not spamming or abusing the platform. A few commits a day is completely fine.
-
----
-
 <p align="center">
   Built with zero guilt and maximum automation.<br/>
   <i>The snake will be fed.</i> 🐍
