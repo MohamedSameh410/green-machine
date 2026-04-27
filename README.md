@@ -6,17 +6,20 @@
 
 ## 📋 Table of Contents
 
-- [The Story](#--the-story)
+- [The Story](#-the-story)
 - [How It Works](#-how-it-works)
 - [Requirements](#-requirements)
 - [Installation](#-installation)
   - [1. Fork or Clone the Repo](#1-fork-or-clone-the-repo)
   - [2. Enable Workflow Permissions](#2-enable-workflow-permissions)
   - [3. Configure Your yml File](#3-configure-your-yml-file)
-    - [3.1 Configure Your Schedule](#3.1-configure-your-schedule)
+    - [3.1 Configure Your Schedule](#31-configure-your-schedule)
+    - [3.2 Configure Your Git Identity](#32-configure-your-git-identity)
   - [4. Push to Main](#4-push-to-main)
-  - [5. Test It Manually](#5-test-it-manually)
-- [Customization](#-customization)
+  - [5. Create a Personal Access Token](#5-create-a-personal-access-token)
+  - [6. Add it as a Repo Secret](#6-add-it-as-a-repo-secret)
+  - [7. Test It Manually](#7-test-it-manually)
+
 ---
 
 ## The Story
@@ -172,7 +175,7 @@ Don't wait until midnight to find out something is broken.
 1. Go to your repo → **Actions** tab
 2. Click **Daily Auto Commit** in the left sidebar
 3. Click **Run workflow** → **Run workflow**
-4. Watch it run — all steps should be green ✅
+4. Watch it run, all steps should be green ✅
 5. Go back to the **Code** tab, you should see a new commit
 
 If it's green, you're set. The bot will take it from here.
