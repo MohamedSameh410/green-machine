@@ -19,6 +19,7 @@
   - [5. Create a Personal Access Token](#5-create-a-personal-access-token)
   - [6. Add it as a Repo Secret](#6-add-it-as-a-repo-secret)
   - [7. Test It Manually](#7-test-it-manually)
+- [Keeping the Snake Alive](#-keeping-the-snake-alive)
 
 ---
 
@@ -181,6 +182,16 @@ Don't wait until midnight to find out something is broken.
 If it's green, you're set. The bot will take it from here.
 
 ---
+
+## Keeping the Snake Alive
+
+<div align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MohamedSameh410/MohamedSameh410/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/MohamedSameh410/MohamedSameh410/output/github-contribution-grid-snake.svg">
+  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/MohamedSameh410/MohamedSameh410/output/github-contribution-grid-snake-dark.svg" width="100%">
+</picture>
+</div>
 
 <p align="center">
   Built with zero guilt and maximum automation.<br/>
